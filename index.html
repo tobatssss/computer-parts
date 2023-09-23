@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Parts</title>
+</head>
+<body>
+    <h1>Computer Parts List</h1>
+
+    <p id="output"></p>
+
+    <button onclick="showJoinedArray()">Join Array</button>
+    <button onclick="showDeletedArray()">Delete Item</button>
+    <button onclick="showConcatenatedArray()">Concatenate Array</button>
+
+    <script>
+        // Create an array of computer parts
+        var computerParts = [
+            "CPU",
+            "GPU",
+            "RAM",
+            "Motherboard",
+            "Hard Drive",
+            "SSD",
+            "Power Supply",
+            "Cooling Fan",
+            "Monitor",
+            "Keyboard"
+        ];
+
+        function showJoinedArray() {
+            var joinedParts = computerParts.join(', ');
+            document.getElementById('output').textContent = "Joined Array: " + joinedParts;
+        }
+
+        function showDeletedArray() {
+            delete computerParts[3]; // Delete "Motherboard" at index 3
+            var deletedParts = computerParts.join(', ');
+            document.getElementById('output').textContent = "Deleted Array: " + deletedParts;
+        }
+
+        function showConcatenatedArray() {
+            var newParts = ["Mouse", "Graphics Card"];
+            var concatenatedParts = computerParts.concat(newParts);
+            var concatenatedString = concatenatedParts.join(', ');
+            document.getElementById('output').textContent = "Concatenated Array: " + concatenatedString;
+        }
+    </script>
+</body>
+</html>
